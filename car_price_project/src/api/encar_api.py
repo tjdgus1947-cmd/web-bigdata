@@ -12,18 +12,18 @@ class EncarAPICrawler:
         )
 
     def crawl(self):
-        print("📡 엔카진단 전체 데이터 요청 중...")
+        print(" 엔카진단 전체 데이터 요청 중...")
 
         r = requests.get(self.url, timeout=25)
 
         if r.status_code != 200:
-            print(f"❌ HTTP ERROR: {r.status_code}")
+            print(f" HTTP ERROR: {r.status_code}")
             return None
         
         data = r.json()
         results = data.get("SearchResults", [])
 
-        print(f"📦 총 {len(results):,}개 차량 수집됨")
+        print(f" 총 {len(results):,}개 차량 수집됨")
 
         df = pd.DataFrame(results)
         return df

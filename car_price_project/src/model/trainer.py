@@ -190,17 +190,17 @@ class ModelTrainer:
         test_r2 = r2_score(y_test, y_pred_test)
 
         print("\n" + "="*50)
-        print("📌 모델 평가 결과 (단위: 만원)")
+        print(" 모델 평가 결과 (단위: 만원)")
         print("="*50)
         print(f"\n[Train Set]")
-        print(f"  🎯 MAE  : {train_mae:,.1f} 만원")
-        print(f"  📉 RMSE : {train_rmse:,.1f} 만원")
-        print(f"  📈 R²   : {train_r2:.4f}")
+        print(f"   MAE  : {train_mae:,.1f} 만원")
+        print(f"   RMSE : {train_rmse:,.1f} 만원")
+        print(f"   R²   : {train_r2:.4f}")
         
         print(f"\n[Test Set]")
-        print(f"  🎯 MAE  : {test_mae:,.1f} 만원")
-        print(f"  📉 RMSE : {test_rmse:,.1f} 만원")
-        print(f"  📈 R²   : {test_r2:.4f}")
+        print(f"   MAE  : {test_mae:,.1f} 만원")
+        print(f"   RMSE : {test_rmse:,.1f} 만원")
+        print(f"   R²   : {test_r2:.4f}")
         
         # 오버피팅 체크
         if train_r2 - test_r2 > 0.1:

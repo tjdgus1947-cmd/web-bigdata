@@ -49,6 +49,12 @@ def main():
     evaluator = ModelEvaluator()
     evaluator.generate_report()
 
+    # ==== 6) 상관관계 분석 ====
+    print("\n==== 6) 상관관계 분석 ====")
+    from src.analysis.correlation_analyzer import CorrelationAnalyzer
+    corr_analyzer = CorrelationAnalyzer()
+    corr_analyzer.run()
+
     # ==== 완료 ====
     print("\n" + "=" * 60)
     print("✅ 전체 파이프라인 실행 완료!")
@@ -57,6 +63,7 @@ def main():
     print("  1. 예측하기: python predict_mycar.py")
     print("  2. 웹 앱 실행: streamlit run app.py")
     print("  3. 시각화 확인: visualizations/ 폴더")
+    print("  4. 상관관계 분석: visualizations/correlation/ 폴더")
     print("=" * 60 + "\n")
 
 if __name__ == "__main__":
